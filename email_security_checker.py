@@ -147,6 +147,10 @@ class EmailSecurityChecker:
 if __name__ == "__main__":
     domain = input("Enter domain: ").strip().lower()
 
+    selector = input("Enter DKIM selector (optional, press Enter to skip): ").strip()
+    if selector == "":
+        selector = None 
+        
     checker = EmailSecurityChecker(domain)
 
     checker.generate_report()
